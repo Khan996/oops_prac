@@ -1,0 +1,3 @@
+Instance varibale: Variable that are define in the constructor
+Reference varibale: Variable tha makes an object i.e a = Atm(). "a" is 
+the reference variable
