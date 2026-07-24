@@ -1,16 +1,26 @@
 class Atm:
 
     def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
-        self.pin = 0
+        self.__owner = owner
+        self.__balance = balance
+        self.__pin = 0
         #self.menu()
 
     def start(self):
-        self.menu()
+        self.__menu()
 
-    def menu(self):
-        user_input = input (f"""Hello, Welcome {self.owner} how do you want to proced?
+    def get_pin(self):
+        return self.__pin
+
+    def set_pin(self, new_pin):
+        if type(new_pin) == str:
+            self.__pin = new_pin
+            print("Pin changed")
+        else:
+            print("Not allowed")
+
+    def __menu(self):
+        user_input = input (f"""Hello, Welcome {self.__owner} how do you want to proced?
                 1. Enter 1 to create pin?
                 2. Enter 2 to make a deposit.
                 3. Enter 3 to withdraw money.
@@ -29,50 +39,50 @@ class Atm:
             print("bye")
 
     def create_pin(self):
-        self.pin = int(input("Enter your pin "))
+        self.__pin = int(input("Enter your pin "))
         print("Pin created successfully")
-        self.menu()
+        self.__menu()
 
     def deposit(self):
         temp = int(input("Enter your pin "))
-        if temp == self.pin:
+        if temp == self.__pin:
             amount = int(input("Enter the amount "))
-            self.balance = self.balance + amount
-            print(f"Deposit successful and the balance is {self.balance}")
+            self.__balance = self.__balance + amount
+            print(f"Deposit successful and the balance is {self.__balance}")
         else:
             print("invalid pin")
-        self.menu()
+        self.__menu()
 
     def withdraw(self):
         temp = int(input("Enter your pin "))
-        if temp == self.pin:
+        if temp == self.__pin:
             amount = int(input("Enter the amount "))
-            if amount < self.balance:
-                self.balance = self.balance - amount 
-                print(f"Operation successful and the balance is {self.balance}")
+            if amount < self.__balance:
+                self.__balance = self.__balance - amount 
+                print(f"Operation successful and the balance is {self.__balance}")
             else:
                 print("insufficient funds ")
         else:
             print("invalid pin")
-        self.menu()
+        self.__menu()
 
     def check_balance(self):
         temp = int(input("Enter your pin "))
-        if temp == self.pin:
-            print(self.balance)
+        if temp == self.__pin:
+            print(self.__balance)
         else:
             print("invalid pin")
-        self.menu()
+        self.__menu()
 
     def show(self):
-        print(self.balance)  
+        print(self.__balance)  
 
-a =  Atm("Ali", 50000)
-b = Atm("Babar", 20000)
-c = Atm("Jawad", 4000)
-d = Atm("Ahmed", 250000)
+# a =  Atm("Ali", 50000)
+# b = Atm("Babar", 20000)
+# c = Atm("Jawad", 4000)
+# d = Atm("Ahmed", 250000)
 
-a.start()
-b.start()
-c.start()
-d.start()
+# a.start()
+# b.start()
+# c.start()
+# d.start()
