@@ -1,3 +1,45 @@
-Instance varibale: Variable that are define in the constructor
-Reference varibale: Variable tha makes an object i.e a = Atm(). "a" is 
+Instance varibale: 
+    - Variable that are define in the constructor. 
+    - The value of each variable is different for every object. 
+      For example pin and balance.
+Static Variable:
+    - All objects share one copy. For example, multiple student share
+      same schools. Their names, grade, grades are different which are
+      instance variables but the school is same which is staic variable.
+    - Instance variable is written inside constructor while static/class
+      variable is wriiten outside constructor. 
+    - Static variable is not called with self. It's called with class name
+      in constructor. 
+        - For example:
+        class Atm:
+            counter = 1
+            def __init__(self):
+            self.sno = Atm.counter
+            Atm.counter = Atm.counter + 1 
+
+Static Method:
+    - A static method does not operate on a specific object. So python does
+    not pass self to it. 
+    - If you pass self, it will give you error.
+    - Sometimes a function(method) belongs to a class but it does not need
+      an object. 
+        - For example:
+        class calcualtor:
+            @staticmethod
+            def add(a,b):  #you don't need an object to add two numbers. 
+                retun a+b
+        calculator.add(10,20)
+
+Reference varibale: 
+    - Variable that makes an object i.e a = Atm(). "a" is 
 the reference variable
+
+Pass by reference:
+    - Mutable:
+    - A mutable object is the one whose contents can be changed
+after it has been created. 
+    - The objects of class are also mutable like list, dict and sets.
+Collection of objects: 
+    - Objects can also be collected like list. You can run loops on 
+    object. It can be done only on mutable data types. 
+

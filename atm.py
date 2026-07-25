@@ -1,10 +1,24 @@
 class Atm:
 
+    # static variable
+    __counter = 1     
     def __init__(self, owner, balance):
+        # instance variables
         self.__owner = owner
         self.__balance = balance
         self.__pin = 0
+        self.sno = Atm.__counter
+        Atm.__counter = Atm.__counter +1 
         #self.menu()
+
+    def get_counter():
+        return Atm.__counter
+
+    def set_counter(new):
+        if type(new) ==  int:
+            Atm.__counter = new
+        else:
+            print("Not allowed")
 
     def start(self):
         self.__menu()

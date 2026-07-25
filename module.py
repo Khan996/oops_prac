@@ -1,12 +1,25 @@
 from atm import Atm
 
 a = Atm("Ali", 5000)
+# b = Atm("Babar", 3000)
+# c = Atm("John", 4000)
+
+# print(a.sno)
+# print(b.sno)
+# print(c.sno)
+
+print(Atm.get_counter())
+Atm.set_counter(5)
+print(Atm.get_counter())
+# print(a.counter)
+# print(b.counter)
+# print(Atm.__counter)
 # print(a._Atm__balance)
 # a.get_pin()
 # a.start()
-print(a.get_pin())
-a.set_pin("123")
-a.start()
+# print(a.get_pin())
+# a.set_pin("123")
+#a.start()
 
 # a.__menu()
 
