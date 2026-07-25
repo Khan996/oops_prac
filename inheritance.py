@@ -78,21 +78,38 @@
 # c.show()
 #-------------------------------------------
 # Child-Parent Example
-class Parent:
+# class Parent:
 
-    def __init__(self, num):
-        self.__num = num
+#     def __init__(self, num):
+#         self.__num = num
 
-    def get_num(self):
-        return self.__num
+#     def get_num(self):
+#         return self.__num
     
-class Child(Parent):
+# class Child(Parent):
 
-    def __init__(self, val, num):
-        self.__val = val
+#     def __init__(self, val, num):
+#         self.__val = val
 
-    def get_val(self):
-        return self.__val
+#     def get_val(self):
+#         return self.__val
     
-c = Child(100, 10)
-print(c.get_num())
+# c = Child(100, 10)
+# print(c.get_num())
+#---------------------------------------
+class A:
+
+    def __init__(self):
+        self.num = 100
+
+    def display1(self,num):
+        print(f"Class A: {self.num}")
+
+class B(A):
+
+    def display2(self, num):
+        print(f"Class B: {self.num}")
+
+s = B()
+s.display1(1000)
+s.display2(28)
