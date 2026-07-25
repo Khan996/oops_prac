@@ -116,6 +116,24 @@
 # ----------------------------------------
 # Super Keyword
 
+# class Phone:
+#     def __init__(self, price, brand, camera):
+#         print("Inside Phone Constructor")
+#         self.price = price
+#         self.brand = brand 
+#         self.camera = camera 
+
+#     def buy(self):
+#         print("Buying a phone")
+# class SmartPhone(Phone):
+
+#     def buy(self):
+#         print("Buying a smartphone")
+#         super().buy()
+
+# s = SmartPhone(50000, "Iphone", "14")
+# s.buy()
+# ----------------------------
 class Phone:
     def __init__(self, price, brand, camera):
         print("Inside Phone Constructor")
@@ -123,13 +141,16 @@ class Phone:
         self.brand = brand 
         self.camera = camera 
 
-    def buy(self):
-        print("Buying a phone")
+    
 class SmartPhone(Phone):
 
-    def buy(self):
-        print("Buying a smartphone")
-        super().buy()
+    def __init__(self, price, brand, camera, os, ram):
+        print("first here")
+        super().__init__(price, brand, camera)
+        self.os = os 
+        self.ram = ram 
+        print("Inside SmartPhone")
+        
 
-s = SmartPhone(50000, "Iphone", "14")
-s.buy()
+s = SmartPhone(50000, "Iphone", "14", "IOS", 2)
+print(s.price, s.brand, s.camera, s.os, s.ram)
