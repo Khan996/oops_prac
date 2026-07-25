@@ -20,7 +20,7 @@ Static Variable:
 Static Method:
     - A static method does not operate on a specific object. So python does
     not pass self to it. 
-    - If you pass self, it will give you error.
+    - If you pass self, it will give you an error.
     - Sometimes a function(method) belongs to a class but it does not need
       an object. 
         - For example:
@@ -43,3 +43,12 @@ Collection of objects:
     - Objects can also be collected like list. You can run loops on 
     object. It can be done only on mutable data types. 
 
+Relationship:
+    1. Is-a (Inheritance problem): 
+        - Smartphone is a product. 
+        - Car is a vehicle. 
+        Both car and smartphone inherit properties. 
+    2. Has-a (Aggregate problem):
+        - Customer has an address. Customer attributes. Address has also
+          attributes. Customer needs an address.
+        - 
