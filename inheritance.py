@@ -97,19 +97,39 @@
 # c = Child(100, 10)
 # print(c.get_num())
 #---------------------------------------
-class A:
+# class A:
 
-    def __init__(self):
-        self.num = 100
+#     def __init__(self):
+#         self.num = 100
 
-    def display1(self,num):
-        print(f"Class A: {self.num}")
+#     def display1(self,num):
+#         print(f"Class A: {self.num}")
 
-class B(A):
+# class B(A):
 
-    def display2(self, num):
-        print(f"Class B: {self.num}")
+#     def display2(self, num):
+#         print(f"Class B: {self.num}")
 
-s = B()
-s.display1(1000)
-s.display2(28)
+# s = B()
+# s.display1(1000)
+# s.display2(28)
+# ----------------------------------------
+# Super Keyword
+
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside Phone Constructor")
+        self.price = price
+        self.brand = brand 
+        self.camera = camera 
+
+    def buy(self):
+        print("Buying a phone")
+class SmartPhone(Phone):
+
+    def buy(self):
+        print("Buying a smartphone")
+        super().buy()
+
+s = SmartPhone(50000, "Iphone", "14")
+s.buy()
